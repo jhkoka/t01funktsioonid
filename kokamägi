@@ -1,1 +1,33 @@
 
+public class Liigaasta { 
+public static boolean Liigaasta(int year) 
+{ 
+if( year % 4 != 0 ){ 
+return false; 
+} 
+
+if(( year % 400 != 0 ) && (year % 100 == 0)){ 
+return false; 
+}else{ 
+return true; 
+} 
+} 
+
+public static void main (String[] args){ 
+int year = 0; 
+String input = ""; 
+BufferedReader in = new BufferedReader(new InputStreamReader(System.in)); 
+while(true){ 
+System.out.println("Sisesta aasta: "); 
+try { 
+input = in.readLine(); 
+year = Integer.valueOf( input ).intValue(); 
+} catch (IOException e) { 
+e.printStackTrace(); 
+} 
+if(year < 0){break;} 
+System.out.print ("Liigaasta "); 
+System.out.println( Liigaasta(year) ); 
+} 
+} 
+} 
